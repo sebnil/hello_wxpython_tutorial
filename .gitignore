@@ -1,0 +1,16 @@
+
+*.toc
+
+*.log
+
+*.pkg
+
+*.pyz
+
+*.0 osx x64
+
+*.plist
+
+*.pyc
+
+*.spec
