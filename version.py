@@ -6,8 +6,8 @@ VSVersionInfo(
   ffi=FixedFileInfo(
     # filevers and prodvers should be always a tuple with four items: (1, 2, 3, 4)
     # Set not needed items to zero 0.
-    filevers=(1, 0, 0, 0),
-    prodvers=(1, 0, 0, 0),
+    filevers=(1, 0, 0, 1),
+    prodvers=(1, 0, 0, 1),
     # Contains a bitmask that specifies the valid bits 'flags'
     mask=0x3f,
     # Contains a bitmask that specifies the Boolean attributes of the file.
@@ -29,15 +29,15 @@ VSVersionInfo(
       [
       StringTable(
         u'040904b0',
-        [StringStruct(u'CompanyName', u'CPAC Systems AB'),
-        StringStruct(u'ProductName', u'Workcard finder'),
-        StringStruct(u'ProductVersion', u'1, 0, 0, 0'),
-        StringStruct(u'InternalName', u'Workcard finder'),
-        StringStruct(u'OriginalFilename', u'WorkcardFinder'),
-        StringStruct(u'FileVersion', u'1, 0, 0, 0'),
-        StringStruct(u'FileDescription', u'Tool to find and analyse Penta Workcards.'),
-        StringStruct(u'LegalCopyright', u'sebastian.nilsson@cpacsystems.se'),
-        StringStruct(u'LegalTrademarks', u'.')])
+        [StringStruct(u'CompanyName', u'Example'),
+        StringStruct(u'ProductName', u'Hello wxPython'),
+        StringStruct(u'ProductVersion', u'1, 0, 0, 1'),
+        StringStruct(u'InternalName', u'product_name'),
+        StringStruct(u'OriginalFilename', u'Hello wxPython'),
+        StringStruct(u'FileVersion', u'1, 0, 0, 1'),
+        StringStruct(u'FileDescription', u'Lorem ipsum.'),
+        StringStruct(u'LegalCopyright', u'your@email.com'),
+        StringStruct(u'LegalTrademarks', u'')])
       ]),
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
   ]

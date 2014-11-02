@@ -14,3 +14,25 @@
 *.pyc
 
 *.spec
+
+.idea/.name
+
+.idea/encodings.xml
+
+.idea/hello_wxpython.iml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
+
+.idea/
+
+build/
+
+dist/

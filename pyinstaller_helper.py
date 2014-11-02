@@ -2,12 +2,12 @@ __author__ = 'sebnil'
 
 import os, sys
 
-def build_version_file():
+def build_version_file(options):
     print('Build version file')
-    print('Version: ' + version)
+    print('Version: ' + options['version'])
 
 
-    version_tuple = version.split('.')
+    version_tuple = options['version'].split('.')
 
 
     f = open('version.py', 'w')
@@ -42,15 +42,15 @@ VSVersionInfo(
       [
       StringTable(
         u'040904b0',
-        [StringStruct(u'CompanyName', u'"""+company_name +"""'),
-        StringStruct(u'ProductName', u'"""+product_name +"""'),
+        [StringStruct(u'CompanyName', u'"""+options['company_name'] +"""'),
+        StringStruct(u'ProductName', u'"""+options['product_name'] +"""'),
         StringStruct(u'ProductVersion', u'"""+'{}, {}, {}, {}'.format(version_tuple[0], version_tuple[1], version_tuple[2], version_tuple[3])+"""'),
-        StringStruct(u'InternalName', u'"""+internal_name +"""'),
-        StringStruct(u'OriginalFilename', u'"""+original_filename +"""'),
+        StringStruct(u'InternalName', u'"""+options['internal_name'] +"""'),
+        StringStruct(u'OriginalFilename', u'"""+options['original_filename'] +"""'),
         StringStruct(u'FileVersion', u'"""+'{}, {}, {}, {}'.format(version_tuple[0], version_tuple[1], version_tuple[2], version_tuple[3])+"""'),
-        StringStruct(u'FileDescription', u'"""+file_description +"""'),
-        StringStruct(u'LegalCopyright', u'"""+legal_copyright +"""'),
-        StringStruct(u'LegalTrademarks', u'"""+legal_trademark +"""')])
+        StringStruct(u'FileDescription', u'"""+options['file_description'] +"""'),
+        StringStruct(u'LegalCopyright', u'"""+options['legal_copyright'] +"""'),
+        StringStruct(u'LegalTrademarks', u'"""+options['legal_trademark'] +"""')])
       ]),
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
   ]
@@ -74,7 +74,7 @@ def build(options):
     filename = options['application_name'] + ' '+ options['version'] + ' ' + get_platform() + ' ' + get_architecture()
 
     if get_platform() == 'win':
-        build_version_file()
-        os.system('pyinstaller -y --windowed --onefile --icon=icon/banana.icns --version-file=version.py --name="' + filename + '" ' + options['script'])
+        build_version_file(options)
+        os.system('pyinstaller -y --windowed --onefile --icon=' + options['icon_win'] + ' --version-file=version.py --name="' + filename + '" ' + options['script'])
     else:
-        os.system('pyinstaller -y --windowed --onefile --icon=icon/banana.icns --name="' + filename + '" ' + options['script'])
+        os.system('pyinstaller -y --windowed --onefile --icon=' + options['icon_osx'] + ' --name="' + filename + '" ' + options['script'])

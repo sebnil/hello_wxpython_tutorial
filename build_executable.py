@@ -2,7 +2,9 @@ __author__ = 'sebnil'
 import pyinstaller_helper
 
 pyinstaller_helper.build({
-    'script': 'hello_wxpython_tutorial.py',
+    'script': 'hello_wxpython.py',
+	'icon_win': 'icon/banana.ico',
+	'icon_osx': 'icon/banana.icns',
     'application_name': 'hello wxpython',
     'version': '1.0.0.1',
     'company_name': u'Example',
